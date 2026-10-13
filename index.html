@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мой первый проект</title>
+  <style>
+    /* Цвета в одном месте — так их легко менять */
+    :root {
+      --fon: #eef6ff;        /* светло-голубой фон страницы */
+      --kartochka: #ffffff;  /* белая карточка */
+      --tekst: #24324d;      /* тёмно-синий текст */
+      --akcent: #6aa6ff;     /* голубая кнопка */
+      --akcent-ten: #3f7fe0; /* тень кнопки */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: var(--fon);
+      color: var(--tekst);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .kartochka {
+      width: 100%;
+      max-width: 480px;
+      padding: 40px 28px;
+      background: var(--kartochka);
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(63, 127, 224, 0.15);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 8vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 32px;
+      font-size: 1.1rem;
+    }
+
+    button {
+      padding: 16px 36px;
+      font: inherit;
+      font-weight: 600;
+      color: #fff;
+      background: var(--akcent);
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 6px 0 var(--akcent-ten);
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    /* Кнопка «вдавливается» при нажатии */
+    button:active {
+      transform: translateY(5px);
+      box-shadow: 0 1px 0 var(--akcent-ten);
+    }
+
+    button:focus-visible {
+      outline: 3px solid var(--tekst);
+      outline-offset: 4px;
+    }
+
+    /* Чуть больше воздуха на больших экранах */
+    @media (min-width: 600px) {
+      .kartochka { padding: 56px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="kartochka">
+    <h1>Мой первый проект</h1>
+    <p>Привет! Это моя первая страница. Я только начинаю учиться, и это уже работает.</p>
+    <button type="button">Нажми меня</button>
+  </main>
+</body>
+</html>
